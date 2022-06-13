@@ -15,4 +15,6 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag vkpr:$(date +%s)
+      run: docker build . --file Dockerfile --tag docker.vertigo-devops.com/vkpr-teste:$(date +%s)
+      
+      
