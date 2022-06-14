@@ -26,6 +26,6 @@ jobs:
           registry: docker.vertigo-devops.com
           username: ${{ secrets.NEXUS_LOGIN_KEY }}
           password: ${{ secrets.NEXUS_PASSWORD_KEY }}
-            echo "Login repositorie nexus"
+
           
           
