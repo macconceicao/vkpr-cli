@@ -19,10 +19,16 @@ jobs:
     - name: Image list
       run: docker image ls              
       
-# Show how to print unmasked GitHub secrets to the console
-    - name: Step 1 - Echo out a GitHub Actions Secret to the logs
+    - name: Run Commands with a Secret
+      env:
+            SECRET_VALUE_LOGIN: ${{ secrets.NEXUS_LOGIN_KEY }}
+            SECRET_VALUE_PASSWORD: ${{ secrets.NEXUS_PASSWORD_KEY }}
       run: |
-          echo "The GitHub Action Secret will be masked:  "
-          echo ${{ secrets.NEXUS_LOGIN_KEY }}
-          echo "Trick to echo GitHub Actions Secret:  "
-          echo ${{secrets.NEXUS_PASSWORD_KEY}} | sed 's/./& /g' 
+          echo "Hello "
+          echo "\\   ^__^"
+          echo " \\  (oo)\\_______"
+          echo "     (__)\\    )\\/\\"
+          echo "      ||----w |"
+          echo "      ||     ||"                   
+          echo "This is a secret login value: $SECRET_VALUE_LOGIN"
+          echo "This is a secret password value: $SECRET_VALUE_PASSWORD"
