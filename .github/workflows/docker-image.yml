@@ -32,3 +32,7 @@ jobs:
           echo "      ||     ||"                   
           echo "This is a secret login value: $SECRET_VALUE_LOGIN"
           echo "This is a secret password value: $SECRET_VALUE_PASSWORD"
+          
+    - name: Push Docker image
+      run: docker login docker.vertigo-devops.com 
+          echo "Push docker image repositorie nexus "
