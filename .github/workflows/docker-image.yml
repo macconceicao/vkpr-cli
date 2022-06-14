@@ -19,7 +19,7 @@ jobs:
     - name: Login to Nexus
       uses: docker/login-action@v2
       with:
-          registry: ${{ secrets.NEXUS_URL_KEY }}
+          registry: ${{ secrets.NEXUS_URL_KEY }}          
           username: ${{ secrets.NEXUS_LOGIN_KEY }}
           password: ${{ secrets.NEXUS_PASSWORD_KEY }}
     - name: Docker Push
