@@ -22,7 +22,7 @@ jobs:
     - name: Run Commands with a Secret
       env:
             SECRET_VALUE_LOGIN: ${{ secrets.NEXUS_LOGIN_KEY }}
-            SECRET_VALUE_PASSWORD: ${{ secrets.NEXUS_LOGIN_KEY }}
+            SECRET_VALUE_PASSWORD: ${{ secrets.NEXUS_PASSWORD_KEY }}
       run: |
           echo "Hello "
           echo "\\   ^__^"
@@ -38,7 +38,7 @@ jobs:
       with:
           registry: docker.vertigo-devops.com
           username: ${{ secrets.NEXUS_LOGIN_KEY }}
-          password: ${{ secrets.NEXUS_LOGIN_KEY }}
+          password: ${{ secrets.NEXUS_PASSWORD_KEY }}
             echo "Login repositorie nexus"
           
           
