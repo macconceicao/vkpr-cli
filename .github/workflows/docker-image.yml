@@ -22,7 +22,7 @@ jobs:
     - name: Run Commands with a Secret
       env:
             SECRET_VALUE_LOGIN: ${{ secrets.NEXUS_LOGIN_KEY }}
-            SECRET_VALUE_PASSWORD: ${{ secrets.NEXUS_PASSWORD_KEY }}
+            SECRET_VALUE_PASSWORD: ${{ secrets.NEXUS_LOGIN_KEY }}
       run: |
           echo "Hello "
           echo "\\   ^__^"
@@ -33,6 +33,13 @@ jobs:
           echo "This is a secret login value: $SECRET_VALUE_LOGIN"
           echo "This is a secret password value: $SECRET_VALUE_PASSWORD"
           
-    - name: Push Docker image
-      run: docker login docker.vertigo-devops.com 
-          echo "Push docker image repositorie nexus "
+    - name: Login to Nexus
+      uses: docker/login-action@v2
+      with:
+          registry: docker.vertigo-devops.com
+          username: ${{ secrets.NEXUS_LOGIN_KEY }}
+          password: ${{ secrets.NEXUS_LOGIN_KEY }}
+            echo "Login repositorie nexus"
+          
+          
+          
