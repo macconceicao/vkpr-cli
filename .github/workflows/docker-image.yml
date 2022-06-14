@@ -41,5 +41,6 @@ jobs:
           password: ${{ secrets.NEXUS_PASSWORD_KEY }}
             echo "Login repositorie nexus"
           
-          
+    - name: Push image Nexus          
+            echo "Push repositorie nexus"
           
